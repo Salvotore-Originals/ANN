@@ -1,0 +1,6 @@
+data/
+*.hdf5
+*.index
+.venv/
+__pycache__/
+.pytest_cache/
