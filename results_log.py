@@ -1,7 +1,8 @@
-import csv, time
+import csv, time, os
 from pathlib import Path
 
-RESULTS = Path(__file__).resolve().parent.parent / "results" / "results.csv"
+RESULTS = (Path(os.environ["A3_RESULTS"]) if "A3_RESULTS" in os.environ
+           else Path(__file__).resolve().parent.parent / "results" / "results.csv")
 COLUMNS = ["timestamp", "part", "dataset", "index", "n_train", "build_params", "search_param",
            "split", "n_queries", "threads", "mode", "recall", "qps", "build_time_s",
            "index_bytes", "bytes_per_vec", "seed", "notes"]
